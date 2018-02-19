@@ -1,6 +1,6 @@
 console.log("Up and running!");
 score = 0;
-
+gameRound = 0;
 var cards = [
   {rank:"queen" ,suit:"hearts" , cardImage:"images/queen-of-hearts.png"},
   {rank:"queen",suit:"diamonds",cardImage:"images/queen-of-diamonds.png"},
@@ -16,14 +16,16 @@ cardsInPlay = [];
 };
 
 var checkForMatch = function() {
+  gameRound = gameRound+1
   if (cardsInPlay[0] === cardsInPlay[1]) {
     score++;
-    alert("You found a match! Points:"+score);
+    alert("You found a match! "+score+" wins in "+ gameRound + " Games");
     reset();
   } else {
-    alert("Try Again. Points:"+score);
+    alert("Try Again. "+score +" wins in "+ gameRound + " Games");
     reset();
   };
+
 };
 var flipCard = function(){
   var cardId=this.getAttribute("data-id");
