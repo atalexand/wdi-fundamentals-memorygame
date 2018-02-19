@@ -40,12 +40,17 @@ var flipCard = function(){
 };
 
 var createBoard = function() {
+  var ran = [0,1,2,3].sort(function() {
+    return .5 - Math.random();
+  });
+  console.log(ran);
   for(i=0;i<4;i++){
     var cardElement = document.createElement('img');
     cardElement.setAttribute('src',"images/back.png");
-    cardElement.setAttribute('data-id',i);
+    cardElement.setAttribute('data-id',ran[i]);
     cardElement.addEventListener('click',flipCard);
     document.getElementById("game-board").appendChild(cardElement); 
+    //delete rand[randomItem]
   };
 };
 
