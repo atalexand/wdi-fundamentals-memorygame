@@ -35,6 +35,7 @@ var flipCard = function(){
   console.log(cards[cardId].cardImage);
   cardsInPlay.push(cards[cardId].rank);
   this.setAttribute("src",cards[cardId].cardImage);
+  this.removeEventListener('click',flipCard);
   if (cardsInPlay.length === 2) {
   setTimeout(function(){checkForMatch();},500);
 }
